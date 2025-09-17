@@ -1,0 +1,156 @@
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Gridlayout */
+.grid-layout {
+  display: grid;
+  grid-template-areas:
+    "banner banner banner"
+    "nav nav nav"
+    "main main ad"
+    "main main ad";
+  grid-template-columns: 2fr 2fr 1fr;
+  grid-template-rows: auto auto 1fr 1fr;
+  height: 100vh;
+}
+
+/* Banner at the top */
+.banner {
+  grid-area: banner;
+  background: url("Image/Tivoli-banner.png") center/cover no-repeat;
+  color: #8A1E40;
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 2.5em;
+  font-weight: bold;
+}
+/* My Font for the banner */
+@font-face {
+  font-family: "MyCustomFont";
+  src: url("fonts/HennyPenny-Regular.ttf") format("truetype");
+}
+
+.banner h1 {
+  font-family: "MyCustomFont", Arial, sans-serif;
+}
+
+/* Nav styling */
+nav {
+  grid-area: nav;
+  background: #ffcad4;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* Buttons inside nav */
+nav button {
+  background: #ffe5d9;
+  color: #8A1E40;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.3s, color 0.3s;
+}
+
+nav button:hover {
+  background: #ffcad4;
+  color: #8A1E40;
+}
+
+main {
+  grid-area: main;
+  background: #f4f4f9;
+  padding: 20px;
+}
+
+aside {
+  grid-area: ad;
+  background: #ddd;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Title */
+.section-title {
+  color: #8A1E40;
+  margin: 0 0 12px;           
+  text-align: center;
+  font-weight: 700;
+  font-size: clamp(1.2rem, 3.5vw, 1.8rem);
+}
+
+/* 3 Sweets Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.card {
+  margin: 0;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover,
+.card:focus-within {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
+
+.card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+/* Descriptions or Captions */
+.card figcaption {
+  padding: 10px 12px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #8A1E40;
+}
+
+/* Media Quarries */
+/* 1. Banner */
+@media (max-width: 520px) {
+  .banner {
+    padding: 18px 12px;
+    min-height: 110px;     
+    text-align: center;
+  }
+  .banner h1 {
+    font-size: 1.6rem;       
+    line-height: 1.05;      
+    letter-spacing: 0.3px;
+  }
+}
+
+/* 2. Nav */
+@media (max-width: 700px) {
+  nav { gap: 10px; padding: 10px 12px; }
+  .nav-link { padding: 9px 14px; font-size: 14px; }
+}
+
+@media (max-width: 480px) {
+  nav { gap: 8px; padding: 8px 10px; }
+  .nav-link {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+}
+
+/* 3. Gallery*/
+@media (max-width: 900px) {.gallery { grid-template-columns: repeat(2, 1fr); }}
+@media (max-width: 520px) {.gallery { grid-template-columns: 1fr; }}
