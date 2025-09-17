@@ -122,6 +122,15 @@ aside {
   color: #8A1E40;
 }
 
+/* ITHS Ad */
+.ad-slot { align-self: start; }
+.ad-slot img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+}
+
 /* Media Quarries */
 /* 1. Banner */
 @media (max-width: 520px) {
@@ -154,3 +163,5 @@ aside {
 /* 3. Gallery*/
 @media (max-width: 900px) {.gallery { grid-template-columns: repeat(2, 1fr); }}
 @media (max-width: 520px) {.gallery { grid-template-columns: 1fr; }}
+
+/* 4. Ad */
