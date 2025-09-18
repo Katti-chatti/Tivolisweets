@@ -11,10 +11,30 @@ body {
     "banner banner banner"
     "nav nav nav"
     "main main ad"
-    "main main ad";
+    "main main ad"
+    "footer footer footer";
   grid-template-columns: 2fr 2fr 1fr;
   grid-template-rows: auto auto 1fr 1fr;
   height: 100vh;
+}
+
+main {
+  grid-area: main;
+  background: #f4f4f9;
+  padding: 20px;
+}
+
+aside {
+  grid-area: ad;
+  background: #ddd;
+  padding: 20px;
+  text-align: center;
+}
+
+footer {
+  grid-area: footer;
+  background: #cabfbf;
+  padding: 20px;
 }
 
 /* Banner at the top */
@@ -64,21 +84,8 @@ nav button:hover {
   color: #8A1E40;
 }
 
-main {
-  grid-area: main;
-  background: #f4f4f9;
-  padding: 20px;
-}
-
-aside {
-  grid-area: ad;
-  background: #ddd;
-  padding: 20px;
-  text-align: center;
-}
-
 /* Title */
-.section-title {
+.title {
   color: #8A1E40;
   margin: 0 0 12px;           
   text-align: center;
@@ -86,7 +93,7 @@ aside {
   font-size: clamp(1.2rem, 3.5vw, 1.8rem);
 }
 
-/* 3 Sweets Gallery */
+/* 3 Sweets Gallery (fick mycket hjälp från ChatGPT att hitta rätt stil och effect jag inte visste om*/
 .gallery {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -123,13 +130,7 @@ aside {
 }
 
 /* ITHS Ad */
-.ad-slot { align-self: start; }
-.ad-slot img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 16px;
-}
+
 
 /* Media Quarries */
 /* 1. Banner */
