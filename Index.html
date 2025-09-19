@@ -7,20 +7,21 @@
     <title>Hem - Tivoli Sweets</title>
 </head>
 <body>
+
+   <section class="grid-layout">
     <!-- Banner -->
      <header class="banner">
       <h1>Tivoli Sweets</h1>
     </header>
 
     <!-- Navigation -->
-   <section class="grid-layout">
     <nav>
-      <button onclick="location.href='index.html'">Home</button>
-      <button>Order</button>
-      <button>About</button>
+      <a href="index.html" class="nav-link" aria-current="page">Home</a>
+      <a href="order.html" class="nav-link">Order</a> <!--No link yet-->
+      <a href="about.html" class="nav-link">About</a> <!--No link yet-->
     </nav>
 
-    <!-- Main Galllery (räknas "figcaption" som "description"?) -->
+    <!-- Main Gallery -->
     <main>
     <h2 class="title">Popular items</h2>
   <section class="gallery" aria-label="Photo gallery">
@@ -36,7 +37,7 @@
       <img src="Image/Heart-candyapple.png" alt="Galaxy Heart Candyapple">
       <figcaption>Heart shaped candy apple with galaxy goo</figcaption>
     </figure>
-    <figure class="card">
+    <figure class="card" id="most-popular">             
       <img src="Image/Churro-pretzel.png" alt="Churro Pretzel">
       <figcaption>Sweet and salty churro pretzel with strawberry chocolate</figcaption>
     </figure>
@@ -51,13 +52,17 @@
   </section>
 </main>
 
-  <aside>Advertisement</aside>
+ <!-- ITHS Ad -->
+   <aside class="ad-slot">
+    <a href="https://www.iths.se/" target="_blank" rel="noopener"
+     aria-label="Öppna IT Högskolan i en ny flik">
+      <img src="Image/ITHS-ad.png" alt="IT Högskolan — Ansök idag">
+    </a>
+    </aside>
 
-</body>
+<footer> September 2025 Project for ITHS </footer>
 
-<footer>
-
-</footer>
 </section>
+</body>
 
 </html>

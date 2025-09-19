@@ -11,11 +11,10 @@ body {
     "banner banner banner"
     "nav nav nav"
     "main main ad"
-    "main main ad"
     "footer footer footer";
   grid-template-columns: 2fr 2fr 1fr;
-  grid-template-rows: auto auto 1fr 1fr;
-  height: 100vh;
+  grid-template-rows: auto auto 1fr auto;
+  min-height: 100vh;
 }
 
 main {
@@ -68,23 +67,32 @@ nav {
   flex-wrap: wrap;
 }
 
-/* Buttons inside nav */
-nav button {
+/* Nav links */
+nav {
+  grid-area: nav;
+  background: #ffcad4;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.nav-link {
+  display: inline-block;
+  text-decoration: none;
   background: #ffe5d9;
   color: #8A1E40;
-  border: none;
   padding: 10px 20px;
   border-radius: 6px;
   font-weight: bold;
-  transition: background 0.3s, color 0.3s;
+  transition: background .3s, color .3s;
+}
+.nav-link:hover { 
+  background: #ffcad4; 
+  color: #8A1E40; 
 }
 
-nav button:hover {
-  background: #ffcad4;
-  color: #8A1E40;
-}
-
-/* Title */
+/* Title Popular Items */
 .title {
   color: #8A1E40;
   margin: 0 0 12px;           
@@ -93,7 +101,7 @@ nav button:hover {
   font-size: clamp(1.2rem, 3.5vw, 1.8rem);
 }
 
-/* 3 Sweets Gallery (fick mycket hjälp från ChatGPT att hitta rätt stil och effect jag inte visste om*/
+/* 3 Sweets Gallery (fick mycket hjälp från ChatGPT att hitta rätt stil och effect jag inte visste om) */
 .gallery {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -121,6 +129,27 @@ nav button:hover {
   display: block;
 }
 
+/* ID Most Popular */
+#most-popular {
+  position: relative;
+  border: 3px solid transparent;
+  background:
+    linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(135deg, #6b2a5b, #ffcad4) border-box;
+}
+
+#most-popular::after {
+  content: "Most popular";
+  position: absolute;
+  top: 8px; left: 8px;
+  padding: 4px 8px;
+  font-size: 12px; font-weight: 700;
+  color: #fff;
+  background: #6b2a5b;
+  border-radius: 999px;
+  letter-spacing: .2px;
+}
+
 /* Descriptions or Captions */
 .card figcaption {
   padding: 10px 12px;
@@ -130,7 +159,13 @@ nav button:hover {
 }
 
 /* ITHS Ad */
-
+.ad-slot { 
+align-self: stretch; }
+.ad-slot img { 
+width: 100%; 
+height: auto; 
+display: block; 
+border-radius: 16px; }
 
 /* Media Quarries */
 /* 1. Banner */
@@ -165,4 +200,19 @@ nav button:hover {
 @media (max-width: 900px) {.gallery { grid-template-columns: repeat(2, 1fr); }}
 @media (max-width: 520px) {.gallery { grid-template-columns: 1fr; }}
 
-/* 4. Ad */
+/* 4. Ad & Phone layout*/
+@media (max-width: 700px) {
+  .grid-layout {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "banner"
+      "nav"
+      "main"
+      "ad"
+      "footer";
+  }
+    .ad-slot { 
+    width: 100%;
+    max-width: none; 
+    margin-top: 16px; }
+}
